@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: calc(10px + 1vmin);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* NavBar.css */
+
+.navbar-container {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-items {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+}
+
+/* Add more styles for responsiveness and other screen sizes if needed */
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  font-weight: 500;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Adjust this value to control the position of the line */
+  width: 0;
+  height: 3px; /* Adjust this value to control the thickness of the line */
+  background-color: #94603b;
+  transition: width 0.5s ease; /* Transition width property */
+}
+
+.nav-link:hover::after{
+  width: 100%; /* Expand the line on hover and active states */
+}
+
+
+
+.nav-link:hover {
+  color: #94603b;
+}
+
+.active {
+  color: #94603b !important; /* Overrides default active link color */
+}
+.custom-navlink.active {
+  color: white !important; /* Ensure the color is always white for the custom NavLink */
+}
+/* ----------------Limit the word on blog page description------- */
+@media (max-width: 600px) {
+.description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+
+}
+.HomeDescription {
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 2; /* Number of lines to show */
+-webkit-box-orient: vertical;
+}
+
+
+
+/* -------------------------OTP File---------------------- */
+.otpContainer{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+padding: 3rem 20%;
+height: auto;
+
+}
+.otpInput{
+padding: 1rem;
+text-align: center;
+width: 5rem;
+margin-left: 1rem;
+font-size: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width: 600px) {
+ .otpInput {
+    width: 3rem;
+
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
